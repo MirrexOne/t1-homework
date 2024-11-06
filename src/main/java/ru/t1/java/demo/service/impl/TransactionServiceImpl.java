@@ -3,6 +3,7 @@ package ru.t1.java.demo.service.impl;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.t1.java.demo.aop.Metric;
 import ru.t1.java.demo.model.Transaction;
 import ru.t1.java.demo.repository.TransactionRepository;
 import ru.t1.java.demo.service.TransactionService;
@@ -26,6 +27,7 @@ public class TransactionServiceImpl implements TransactionService {
     }
 
     @Override
+    @Metric(1000)
     public Transaction createTransaction(Transaction transaction) {
         return transactionRepository.save(transaction);
     }

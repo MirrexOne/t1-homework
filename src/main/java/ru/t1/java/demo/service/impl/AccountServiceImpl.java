@@ -3,6 +3,7 @@ package ru.t1.java.demo.service.impl;
 import jakarta.persistence.EntityNotFoundException;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import ru.t1.java.demo.aop.Metric;
 import ru.t1.java.demo.model.Account;
 import ru.t1.java.demo.repository.AccountRepository;
 import ru.t1.java.demo.service.AccountService;
@@ -24,6 +25,7 @@ public class AccountServiceImpl implements AccountService {
                 .orElseThrow(() -> new EntityNotFoundException("Account not found"));
     }
 
+    @Metric(1000)
     public Account createAccount(Account account) {
         return accountRepository.save(account);
     }

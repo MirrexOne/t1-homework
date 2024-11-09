@@ -1,5 +1,6 @@
 package ru.t1.java.demo.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.EnumType;
 import jakarta.persistence.Enumerated;
@@ -25,10 +26,18 @@ public class Account {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
+    @Column(unique = true)
+    private String accountId;
+
     private Long clientId;
 
     @Enumerated(EnumType.STRING)
     private AccountType accountType;
 
+    @Enumerated(EnumType.STRING)
+    private AccountStatus status;
+
     private Double balance;
+
+    private Double frozenAmount;
 }

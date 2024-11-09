@@ -3,7 +3,11 @@ package ru.t1.java.demo.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
-import lombok.*;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
 import org.springframework.data.jpa.domain.AbstractPersistable;
 
 @Getter
@@ -15,6 +19,9 @@ import org.springframework.data.jpa.domain.AbstractPersistable;
 @Table(name = "client")
 public class Client extends AbstractPersistable<Long> {
 
+    @Column(unique = true)
+    private String clientId;
+
     @Column(name = "first_name")
     private String firstName;
 
@@ -23,5 +30,4 @@ public class Client extends AbstractPersistable<Long> {
 
     @Column(name = "middle_name")
     private String middleName;
-
 }

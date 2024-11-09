@@ -12,6 +12,7 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import ru.t1.java.demo.model.emuns.AccountStatus;
 import ru.t1.java.demo.model.emuns.AccountType;
 
 @Entity

@@ -30,3 +30,8 @@ logging:
 
 t1:
   scan-path: ru.t1.java.demo
+
+transaction:
+  limit:
+    count: 1000
+    time-window-minutes: 60

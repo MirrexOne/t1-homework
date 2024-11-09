@@ -31,7 +31,7 @@ public class Transaction {
     @Column(unique = true)
     private String transactionId;
 
-    private Long accountId;
+    private String  accountId;
 
     private Double amount;
 

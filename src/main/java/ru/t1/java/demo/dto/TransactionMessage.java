@@ -5,7 +5,7 @@ import java.time.LocalDateTime;
 
 @Value
 public class TransactionMessage {
-    String clientId;
+    Long clientId;
     String accountId;
     String transactionId;
     LocalDateTime timestamp;
